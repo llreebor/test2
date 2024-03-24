@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	@font-face {
+		font-family: "Satoshi";
+		src: url("../fonts/Satoshi-Regular.woff2") format("woff2"),
+			url("../fonts/Satoshi-Regular.woff") format("woff"),
+			url("../fonts/Satoshi-Regular.ttf") format("truetype");
+		font-weight: 400;
+		font-display: swap;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: "Satoshi";
+		src: url("../fonts/Satoshi-Medium.woff2") format("woff2"),
+			url("../fonts/Satoshi-Medium.woff") format("woff"),
+			url("../fonts/Satoshi-Medium.ttf") format("truetype");
+		font-weight: 500;
+		font-display: swap;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: "Satoshi";
+		src: url("../fonts/Satoshi-Bold.woff2") format("woff2"),
+			url("../fonts/Satoshi-Bold.woff") format("woff"),
+			url("../fonts/Satoshi-Bold.ttf") format("truetype");
+		font-weight: 700;
+		font-display: swap;
+		font-style: normal;
+	}
+	html,
+	body {
+		scrollbar-gutter: stable;
+		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+		text-rendering: optimizeLegibility !important;
+		-webkit-font-smoothing: antialiased !important;
+		scroll-behavior: smooth;
+
+		-webkit-font-smoothing: antialiased; /* Для Chrome и Safari */
+		-moz-osx-font-smoothing: grayscale;
+	}
+	body {
+		@apply font-satoshi text-primary relative;
+	}
+	h1 {
+		@apply text-[28px] leading-[32px] tracking-[-0.03em] font-bold;
+	}
+	h2 {
+		@apply text-[24px] leading-[28px] tracking-[-0.02em] font-bold;
+	}
+	h3 {
+		@apply text-[22px] leading-[24px] tracking-[-0.02em] font-bold;
+	}
+	h4 {
+		@apply text-[20px] leading-[24px] tracking-[-0.01em] font-bold;
+	}
+	h5 {
+		@apply text-[18px] leading-[24px] tracking-[-0.01em] font-bold;
+	}
+	h6 {
+		@apply text-[16px] leading-[20px] font-bold;
+	}
+	p {
+		@apply text-base;
+	}
+	tr {
+		@apply hover:bg-neutral-lighter;
+	}
+	td {
+		@apply whitespace-nowrap;
+	}
+}
+
+@layer components {
+	/* Button */
+	.btn {
+		@apply flex shrink-0 items-center justify-center max-w-fit gap-xs rounded-md px-sm py-xs text-base;
+	}
+	/* Button Style */
+	.btn-primary {
+		@apply border border-transparent bg-bg-primary  font-bold text-white transition-colors hover:bg-bg-primary-dark disabled:bg-bg-primary-light disabled:cursor-not-allowed;
+	}
+	.btn-secondary {
+		@apply border border-border-primary-light bg-bg-primary-extra-light  font-bold text-brand-primary transition-colors hover:bg-bg-primary-light;
+	}
+	.btn-secondary-neutral {
+		@apply border border-border-medium bg-white  font-bold text-secondary transition-colors hover:bg-bg-neutral-light;
+	}
+	.btn-tertiary {
+		@apply border border-transparent bg-transparent  font-bold text-brand-primary transition-colors hover:bg-bg-primary-extra-light;
+	}
+	.btn-danger {
+		@apply border border-transparent bg-bg-error  font-bold text-white transition-colors hover:bg-bg-error-dark;
+	}
+	.btn-danger-secondary {
+		@apply border border-border-error-light bg-bg-error-lighter font-bold text-error-text transition-colors hover:bg-bg-error-light;
+	}
+	.btn-link {
+		@apply p-0 border border-transparent bg-transparent font-bold text-brand-primary transition-colors hover:underline underline-offset-4;
+	}
+
+	/* Button Size */
+	.btn-medium {
+		@apply text-sm;
+	}
+	.btn-small {
+		@apply text-xs px-xs py-2xs;
+	}
+}

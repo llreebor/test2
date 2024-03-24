@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Senseloom</title>
+
+		<!-- Favicon -->
+		<link
+			href="../assets/images/global/favicon32x32.png"
+			rel="shortcut icon"
+			type="image/x-icon" />
+		<link
+			href="../assets/images/global/favicon256x256.png"
+			rel="apple-touch-icon" />
+		<link rel="stylesheet" href="../assets/styles/output.css" />
+	</head>
+	<body>
+		<!-- START Notification -->
+		<div
+			class="flex flex-col items-center justify-center gap-xs bg-bg-warning-light border-b border-b-bg-warning p-xs sm:flex-row sm:gap-lg">
+			<p
+				class="text-center text-base font-medium text-warning sm:text-left">
+				You currently manage the content on the site as
+				<b>Great Organization</b>
+			</p>
+
+			<!-- Btn Secondary Extra Small With Icons -->
+			<button
+				class="switch-button flex items-center justify-center gap-2xs rounded-md border border-border-medium bg-white px-xs py-2xs text-xs font-bold leading-none text-secondary transition-colors hover:bg-neutral-light">
+				<img
+					class="h-4 w-4"
+					src="./assets/images/icons/switch-icon-banner.svg"
+					alt="icon" />
+				<span class="leading-none">Switch back</span>
+			</button>
+		</div>
+		<!-- END Notification -->
+
+		<!-- Header -->
+		<header class="border-b border-border-light">
+			<div class="mx-auto max-w-full px-md sm:px-lg">
+				<div
+					class="flex w-full items-center gap-lg py-sm sm:justify-between">
+					<a class="hidden lg:block" href="./">
+						<img
+							src="./assets/images/global/logo-full.svg"
+							alt="logo" />
+					</a>
+					<button id="burger-button" class="shrink-0 lg:hidden">
+						<img
+							src="./assets/images/icons/burger-icon.svg"
+							alt="img" />
+					</button>
+
+					<div class="w-full md:ml-0 sm:max-w-[432px]">
+						<!-- Search Input With Label  -->
+						<label
+							class="group relative flex w-full flex-col gap-md"
+							for="search">
+							<input
+								class="peer flex items-center justify-between w-full rounded-full border border-transparent bg-bg-neutral-light pl-10 py-xs pr-sm text-base font-medium text-primary shadow-xs outline-none placeholder:text-light transition-all focus:border-brand-primary focus:ring-0 hover:border-border-light"
+								placeholder="Search"
+								type="text"
+								name="search"
+								id="search	" />
+
+							<svg
+								class="absolute left-sm top-1/2 -translate-y-1/2"
+								width="20"
+								height="20"
+								viewBox="0 0 20 20"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M17.5 17.5L13.1694 13.1694M13.1694 13.1694C14.3004 12.0384 15 10.4759 15 8.75C15 5.29822 12.2018 2.5 8.75 2.5C5.29822 2.5 2.5 5.29822 2.5 8.75C2.5 12.2018 5.29822 15 8.75 15C10.4759 15 12.0384 14.3004 13.1694 13.1694Z"
+									stroke="#9E9AAC"
+									class="group-has-[:focus]:stroke-soft"
+									stroke-width="1.5"
+									stroke-linecap="round"
+									stroke-linejoin="round" />
+							</svg>
+						</label>
+					</div>
+
+					<!-- START Profile & Dropdown -->
+					<div
+						class="group relative profile-button"
+						id="profile-button">
+						<button class="flex items-center gap-xs">
+							<div
+								class="h-10 w-10 shrink-0 overflow-hidden rounded-full border border-border-light">
+								<img
+									class="pointer-events-none object-cover"
+									src="./assets/images/global/avatar.jpg"
+									srcset="
+										./assets/images/global/avatar@2x.jpg 2x,
+										./assets/images/global/avatar@3x.jpg 3x
+									"
+									alt="avatar" />
+							</div>
+
+							<svg
+								class="transition-transform"
+								id="profile-button-icon"
+								width="20"
+								height="20"
+								viewBox="0 0 20 20"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg">
+								<path
+									class="group-hover:fill-[#161519] group-[.opened]:fill-[#161519]"
+									fill-rule="evenodd"
+									clip-rule="evenodd"
+									d="M5.21967 8.21967C5.51256 7.92678 5.98744 7.92678 6.28033 8.21967L10 11.9393L13.7197 8.21967C14.0126 7.92678 14.4874 7.92678 14.7803 8.21967C15.0732 8.51256 15.0732 8.98744 14.7803 9.28033L10.5303 13.5303C10.3897 13.671 10.1989 13.75 10 13.75C9.80109 13.75 9.61032 13.671 9.46967 13.5303L5.21967 9.28033C4.92678 8.98744 4.92678 8.51256 5.21967 8.21967Z"
+									fill="#6D687F" />
+							</svg>
+						</button>
+
+						<div
+							id="profile-dropdown"
+							class="profile-dropdown z-20 absolute right-0 top-full mt-2xs w-[256px] hidden overflow-hidden rounded-md border border-border-light bg-white p-xs shadow-md sm:right-0">
+							<div class="p-xs text-left cursor-default">
+								<p class="font-bold">Jozef Ševčík</p>
+								<p class="font-medium text-soft">
+									jozef@example.com
+								</p>
+							</div>
+
+							<!-- STAR Divider -->
+							<hr class="border-b-border-light block my-xs" />
+							<!-- END Divider -->
+							<nav>
+								<ul class="space-y-xs">
+									<li>
+										<a
+											class="group flex items-center gap-xs rounded-md p-xs transition-colors hover:bg-bg-neutral-lighter focus:bg-bg-neutral-light"
+											href="/person_detail">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 20 20"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M14.9846 15.604C13.8434 14.0979 12.0353 13.125 10 13.125C7.96467 13.125 6.15658 14.0979 5.01539 15.604M14.9846 15.604C16.5279 14.2303 17.5 12.2287 17.5 10C17.5 5.85786 14.1421 2.5 10 2.5C5.85786 2.5 2.5 5.85786 2.5 10C2.5 12.2287 3.47208 14.2303 5.01539 15.604M14.9846 15.604C13.6596 16.7834 11.9135 17.5 10 17.5C8.08653 17.5 6.34042 16.7834 5.01539 15.604M12.5 8.125C12.5 9.50571 11.3807 10.625 10 10.625C8.61929 10.625 7.5 9.50571 7.5 8.125C7.5 6.74429 8.61929 5.625 10 5.625C11.3807 5.625 12.5 6.74429 12.5 8.125Z"
+													stroke="#6D687F"
+													stroke-width="1.5"
+													stroke-linecap="round"
+													class="transition-colors group-hover:stroke-secondary-text group-[.active]:stroke-brand-primary"
+													stroke-linejoin="round" />
+											</svg>
+
+											<span
+												class="font-medium text-secondary transition-colors group-[.active]:text-brand-primary">
+												Your Profile
+											</span>
+										</a>
+									</li>
+									<li>
+										<a
+											class="group flex items-center gap-xs rounded-md p-xs transition-colors hover:bg-bg-neutral-lighter focus:bg-bg-neutral-light"
+											href="/documentation">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 20 20"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M3.12459 8.14668C3.21796 8.13241 3.31375 8.125 3.41149 8.125H16.5877C16.6854 8.125 16.7812 8.13241 16.8746 8.14668M3.12459 8.14668C2.12792 8.299 1.40779 9.23235 1.55533 10.2652L2.26962 15.2652C2.40158 16.1889 3.19268 16.875 4.12577 16.875H15.8734C16.8065 16.875 17.5976 16.1889 17.7296 15.2652L18.4439 10.2652C18.5914 9.23235 17.8713 8.299 16.8746 8.14668M3.12459 8.14668V5C3.12459 3.96447 3.96406 3.125 4.99959 3.125H8.23183C8.56335 3.125 8.88129 3.2567 9.11571 3.49112L10.8835 5.25888C11.1179 5.4933 11.4358 5.625 11.7674 5.625H14.9996C16.0351 5.625 16.8746 6.46447 16.8746 7.5V8.14668"
+													stroke="#6D687F"
+													stroke-width="1.5"
+													stroke-linecap="round"
+													class="transition-colors group-hover:stroke-secondary-text group-[.active]:stroke-brand-primary"
+													stroke-linejoin="round" />
+											</svg>
+
+											<span
+												class="font-medium text-secondary transition-colors group-[.active]:text-brand-primary">
+												Documentation
+											</span>
+										</a>
+									</li>
+									<li>
+										<a
+											class="group flex items-center gap-xs rounded-md p-xs transition-colors hover:bg-bg-neutral-lighter focus:bg-bg-neutral-light"
+											href="#">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 20 20"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M8.23242 6.2657C9.20873 5.41143 10.7916 5.41143 11.768 6.2657C12.7443 7.11998 12.7443 8.50502 11.768 9.3593C11.598 9.50798 11.4097 9.63079 11.2094 9.72772C10.588 10.0285 10.0002 10.5596 10.0002 11.25V11.875M17.5 10C17.5 14.1421 14.1421 17.5 10 17.5C5.85786 17.5 2.5 14.1421 2.5 10C2.5 5.85786 5.85786 2.5 10 2.5C14.1421 2.5 17.5 5.85786 17.5 10ZM10 14.375H10.0063V14.3813H10V14.375Z"
+													stroke="#6D687F"
+													stroke-width="1.5"
+													class="transition-colors group-hover:stroke-secondary-text group-[.active]:stroke-brand-primary"
+													stroke-linecap="round"
+													stroke-linejoin="round" />
+											</svg>
+
+											<span
+												class="font-medium text-secondary transition-colors group-[.active]:text-brand-primary">
+												Support
+											</span>
+										</a>
+									</li>
+								</ul>
+							</nav>
+
+							<!-- STAR Divider -->
+							<hr class="border-b-border-light block my-xs" />
+							<!-- END Divider -->
+							<nav>
+								<ul class="space-y-xs">
+									<li>
+										<a
+											class="group flex items-center gap-xs rounded-md p-xs transition-colors hover:bg-bg-neutral-lighter focus:bg-bg-neutral-light"
+											href="#">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 20 20"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path
+													fill-rule="evenodd"
+													clip-rule="evenodd"
+													class="transition-colors group-hover:stroke-secondary-text group-[.active]:stroke-brand-primary"
+													d="M3 4.25C3 3.00736 4.00736 2 5.25 2H10.75C11.9926 2 13 3.00736 13 4.25V6.25C13 6.66421 12.6642 7 12.25 7C11.8358 7 11.5 6.66421 11.5 6.25V4.25C11.5 3.83579 11.1642 3.5 10.75 3.5H5.25C4.83579 3.5 4.5 3.83579 4.5 4.25V15.75C4.5 16.1642 4.83579 16.5 5.25 16.5H10.75C11.1642 16.5 11.5 16.1642 11.5 15.75V13.75C11.5 13.3358 11.8358 13 12.25 13C12.6642 13 13 13.3358 13 13.75V15.75C13 16.9926 11.9926 18 10.75 18H5.25C4.00736 18 3 16.9926 3 15.75V4.25Z"
+													fill="#6D687F" />
+												<path
+													fill-rule="evenodd"
+													clip-rule="evenodd"
+													class="transition-colors group-hover:stroke-secondary-text group-[.active]:stroke-brand-primary"
+													d="M6 10C6 9.58579 6.33579 9.25 6.75 9.25H16.2955L15.2483 8.30747C14.9404 8.03038 14.9154 7.55616 15.1925 7.24828C15.4696 6.94039 15.9438 6.91543 16.2517 7.19253L18.7517 9.44253C18.9098 9.58476 19 9.78738 19 10C19 10.2126 18.9098 10.4152 18.7517 10.5575L16.2517 12.8075C15.9438 13.0846 15.4696 13.0596 15.1925 12.7517C14.9154 12.4438 14.9404 11.9696 15.2483 11.6925L16.2955 10.75H6.75C6.33579 10.75 6 10.4142 6 10Z"
+													fill="#6D687F" />
+											</svg>
+
+											<span
+												class="font-medium text-secondary transition-colors group-[.active]:text-brand-primary">
+												Sign Out
+											</span>
+										</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+					<!-- END Profile & Dropdown -->
+				</div>
+			</div>
+		</header>
+		<!-- END Header -->
+		<!-- Mobile Sidebar -->
+		<aside
+			id="mobile-sidebar"
+			class="sidebar-wrapper group inset-0 z-20 hidden animate-fadeIn bg-soft/90">
+			<div
+				class="relative flex h-full w-full max-w-8xl animate-slideOutX flex-col gap-xl bg-white p-lg pr-0 transition-transform group-[.opened]:animate-slideInX sm:max-w-[368px]">
+				<div class="flex justify-between items-center pr-lg">
+					<!-- Logo -->
+					<a href="./">
+						<img
+							class="block sm:hidden"
+							src="./assets/images/global/logo-mobile.svg"
+							alt="img" />
+						<img
+							class="hidden sm:block"
+							src="./assets/images/global/logo-full.svg"
+							alt="img" />
+					</a>
+
+					<!-- Close Btn -->
+					<button
+						id="close-sidebar-btn"
+						class="flex h-2xl w-2xl items-center justify-center">
+						<svg
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M5.46967 5.46967C5.76256 5.17678 6.23744 5.17678 6.53033 5.46967L12 10.9393L17.4697 5.46967C17.7626 5.17678 18.2374 5.17678 18.5303 5.46967C18.8232 5.76256 18.8232 6.23744 18.5303 6.53033L13.0607 12L18.5303 17.4697C18.8232 17.7626 18.8232 18.2374 18.5303 18.5303C18.2374 18.8232 17.7626 18.8232 17.4697 18.5303L12 13.0607L6.53033 18.5303C6.23744 18.8232 5.76256 18.8232 5.46967 18.5303C5.17678 18.2374 5.17678 17.7626 5.46967 17.4697L10.9393 12L5.46967 6.53033C5.17678 6.23744 5.17678 5.76256 5.46967 5.46967Z"
+								fill="#6D687F" />
+						</svg>
+					</button>
+				</div>
+
+				<!-- Navs Blocks -->
+				<div class="flex flex-col w-full overflow-auto pr-lg">
+					<!-- Nav Block -->
+					<div>
+						<p class="py-2xs text-sm font-medium text-soft">
+							Content Hub
+						</p>
+						<nav>
+							<ul class="space-y-2xs">
+								<li>
+									<a class="group" href="/">
+										<div
+											class="flex items-center gap-xs rounded-md py-xs px-sm transition-colors group-[.active]:bg-bg-primary-extra-light">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 20 20"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M1.875 10.0001L9.33709 2.53802C9.7032 2.1719 10.2968 2.1719 10.6629 2.53801L18.125 10.0001M3.75 8.1251V16.5626C3.75 17.0804 4.16973 17.5001 4.6875 17.5001H8.125V13.4376C8.125 12.9198 8.54473 12.5001 9.0625 12.5001H10.9375C11.4553 12.5001 11.875 12.9198 11.875 13.4376V17.5001H15.3125C15.8303 17.5001 16.25 17.0804 16.25 16.5626V8.1251M6.875 17.5001H13.75"
+													stroke="#6D687F"
+													stroke-width="1.5"
+													stroke-linecap="round"
+													class="transition-colors group-hover:stroke-secondary-text group-[.active]:stroke-brand-primary"
+													stroke-linejoin="round" />
+											</svg>
+
+											<span
+												class="font-medium text-secondary transition-colors group-[.active]:text-brand-primary">
+												Home
+											</span>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a class="group" href="/resources">
+										<div
+											class="flex items-center gap-xs rounded-md py-xs px-sm transition-colors group-[.active]:bg-bg-primary-extra-light">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 20 20"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M16.25 11.875V9.6875C16.25 8.1342 14.9908 6.875 13.4375 6.875H12.1875C11.6697 6.875 11.25 6.45527 11.25 5.9375V4.6875C11.25 3.1342 9.9908 1.875 8.4375 1.875H6.875M8.75 1.875H4.6875C4.16973 1.875 3.75 2.29473 3.75 2.8125V17.1875C3.75 17.7053 4.16973 18.125 4.6875 18.125H15.3125C15.8303 18.125 16.25 17.7053 16.25 17.1875V9.375C16.25 5.23286 12.8921 1.875 8.75 1.875Z"
+													stroke="#6D687F"
+													class="transition-colors group-hover:stroke-secondary-text group-[.active]:stroke-brand-primary"
+													stroke-width="1.5"
+													stroke-linecap="round"
+													stroke-linejoin="round" />
+											</svg>
+
+											<span
+												class="font-medium text-secondary transition-colors group-[.active]:text-brand-primary">
+												Resources
+											</span>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a class="group" href="/faq">
+										<div
+											class="flex items-center gap-xs rounded-md py-xs px-sm transition-colors group-[.active]:bg-bg-primary-extra-light">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 20 20"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M16.875 7.09253C17.6117 7.32957 18.125 8.03267 18.125 8.84018V12.4115C18.125 13.3587 17.4188 14.1619 16.4748 14.2389C16.1923 14.262 15.9091 14.2821 15.625 14.2994V16.875L13.125 14.375C11.9969 14.375 10.8797 14.329 9.77519 14.2388C9.5266 14.2186 9.2945 14.1479 9.08745 14.0375M16.875 7.09253C16.7488 7.05193 16.6161 7.025 16.4783 7.01356C15.3727 6.9218 14.2543 6.875 13.125 6.875C11.9957 6.875 10.8773 6.9218 9.77174 7.01356C8.82916 7.09179 8.125 7.89436 8.125 8.84018V12.4114C8.125 13.1092 8.50822 13.7288 9.08745 14.0375M16.875 7.09253V5.53109C16.875 4.17991 15.9152 3.00887 14.5753 2.83492C12.8732 2.61396 11.1375 2.5 9.37524 2.5C7.61278 2.5 5.87694 2.61399 4.1747 2.83499C2.83477 3.00895 1.875 4.17998 1.875 5.53115V10.7189C1.875 12.07 2.83478 13.2411 4.1747 13.415C4.65551 13.4774 5.13899 13.5313 5.625 13.5765V17.5L9.08745 14.0375"
+													stroke="#6D687F"
+													stroke-width="1.5"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+													class="transition-colors group-hover:stroke-secondary-text group-[.active]:stroke-brand-primary" />
+											</svg>
+
+											<span
+												class="font-medium text-secondary transition-colors group-[.active]:text-brand-primary">
+												FAQ
+											</span>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a class="active group" href="/bookmarks">
+										<div
+											class="flex items-center gap-xs rounded-md py-xs px-sm transition-colors group-[.active]:bg-bg-primary-extra-light">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 20 20"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M14.6611 2.76867C15.5783 2.87511 16.25 3.66583 16.25 4.58916V17.5L10 14.375L3.75 17.5V4.58916C3.75 3.66583 4.42173 2.87511 5.3389 2.76867C6.86797 2.59122 8.42333 2.5 10 2.5C11.5767 2.5 13.132 2.59122 14.6611 2.76867Z"
+													stroke="#6D687F"
+													stroke-width="1.5"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+													class="transition-colors group-hover:stroke-secondary-text group-[.active]:stroke-brand-primary" />
+											</svg>
+
+											<span
+												class="font-medium text-secondary transition-colors group-[.active]:text-brand-primary">
+												Bookmarks
+											</span>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a class="group" href="/ideas">
+										<div
+											class="flex items-center gap-xs rounded-md py-xs px-sm transition-colors group-[.active]:bg-bg-primary-extra-light">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 20 20"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M10 15V10.625M10 10.625C10.4316 10.625 10.8505 10.5704 11.25 10.4675M10 10.625C9.56838 10.625 9.14953 10.5704 8.75 10.4675M11.875 16.6995C11.2677 16.8147 10.6409 16.875 10 16.875C9.35913 16.875 8.73235 16.8147 8.125 16.6995M11.25 18.685C10.8392 18.728 10.4222 18.75 10 18.75C9.57783 18.75 9.1608 18.728 8.75 18.685M11.875 15V14.8403C11.875 14.0212 12.4236 13.3209 13.132 12.9098C14.9963 11.8281 16.25 9.81048 16.25 7.5C16.25 4.04822 13.4518 1.25 10 1.25C6.54822 1.25 3.75 4.04822 3.75 7.5C3.75 9.81048 5.00371 11.8281 6.86796 12.9098C7.57644 13.3209 8.125 14.0212 8.125 14.8403V15"
+													stroke="#6D687F"
+													stroke-width="1.5"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+													class="transition-colors group-hover:stroke-secondary-text group-[.active]:stroke-brand-primary" />
+											</svg>
+
+											<span
+												class="font-medium text-secondary transition-colors group-[.active]:text-brand-primary">
+												Ideas
+											</span>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<!-- STAR Divider -->
+					<hr class="border-b-border-light block my-md" />
+					<!-- END Divider -->
+					<!-- Nav Block -->
+					<div>
+						<p class="py-2xs text-sm font-medium text-soft">
+							Organization
+						</p>
+						<nav>
+							<ul class="space-y-2xs">
+								<li>
+									<a class="group" href="/people">
+										<div
+											class="flex items-center gap-xs rounded-md py-xs px-sm transition-colors group-[.active]:bg-bg-primary-extra-light">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 20 20"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M12.5 15.9396C13.1941 16.1417 13.9281 16.25 14.6875 16.25C15.9198 16.25 17.0854 15.9647 18.122 15.4565C18.124 15.4088 18.125 15.3607 18.125 15.3125C18.125 13.414 16.5859 11.875 14.6875 11.875C13.5058 11.875 12.4633 12.4713 11.8446 13.3793M12.5 15.9396V15.9375C12.5 15.0101 12.2624 14.1382 11.8446 13.3793M12.5 15.9396C12.5 15.9693 12.4997 15.999 12.4992 16.0286C10.9478 16.9627 9.1304 17.5 7.1875 17.5C5.2446 17.5 3.4272 16.9627 1.87577 16.0286C1.87526 15.9983 1.875 15.9679 1.875 15.9375C1.875 13.0035 4.25349 10.625 7.1875 10.625C9.1941 10.625 10.9409 11.7375 11.8446 13.3793M10 5.3125C10 6.8658 8.7408 8.125 7.1875 8.125C5.6342 8.125 4.375 6.8658 4.375 5.3125C4.375 3.7592 5.6342 2.5 7.1875 2.5C8.7408 2.5 10 3.7592 10 5.3125ZM16.875 7.1875C16.875 8.39562 15.8956 9.375 14.6875 9.375C13.4794 9.375 12.5 8.39562 12.5 7.1875C12.5 5.97938 13.4794 5 14.6875 5C15.8956 5 16.875 5.97938 16.875 7.1875Z"
+													stroke="#6D687F"
+													stroke-width="1.5"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+													class="transition-colors group-hover:stroke-secondary-text group-[.active]:stroke-brand-primary" />
+											</svg>
+
+											<span
+												class="font-medium text-secondary transition-colors group-[.active]:text-brand-primary">
+												People
+											</span>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a class="group" href="/suppliers">
+										<div
+											class="flex items-center gap-xs rounded-md py-xs px-sm transition-colors group-[.active]:bg-bg-primary-extra-light">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 20 20"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M6.875 15.625C6.875 16.3154 6.31536 16.875 5.625 16.875C4.93464 16.875 4.375 16.3154 4.375 15.625M6.875 15.625C6.875 14.9346 6.31536 14.375 5.625 14.375C4.93464 14.375 4.375 14.9346 4.375 15.625M6.875 15.625H11.875M4.375 15.625H2.8125C2.29473 15.625 1.875 15.2053 1.875 14.6875V11.8754M16.25 15.625C16.25 16.3154 15.6904 16.875 15 16.875C14.3096 16.875 13.75 16.3154 13.75 15.625M16.25 15.625C16.25 14.9346 15.6904 14.375 15 14.375C14.3096 14.375 13.75 14.9346 13.75 15.625M16.25 15.625L17.1875 15.625C17.7053 15.625 18.1281 15.2048 18.0962 14.688C17.9212 11.8483 16.9561 9.2224 15.418 7.02736C15.1162 6.5966 14.6274 6.33978 14.1022 6.31096H11.875M13.75 15.625H11.875M11.875 6.31096V5.51232C11.875 5.03942 11.5229 4.63934 11.0525 4.59052C9.67945 4.44803 8.28576 4.375 6.875 4.375C5.46424 4.375 4.07055 4.44803 2.69748 4.59052C2.2271 4.63934 1.875 5.03942 1.875 5.51232V11.8754M11.875 6.31096V11.8754M11.875 15.625V11.8754M11.875 11.8754H1.875"
+													stroke="#6D687F"
+													stroke-width="1.5"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+													class="transition-colors group-hover:stroke-secondary-text group-[.active]:stroke-brand-primary" />
+											</svg>
+
+											<span
+												class="font-medium text-secondary transition-colors group-[.active]:text-brand-primary">
+												Suppliers
+											</span>
+										</div>
+									</a>
+								</li>
+
+								<li>
+									<a
+										class="group"
+										href="/organization_settings">
+										<div
+											class="flex items-center gap-xs rounded-md py-xs px-sm transition-colors group-[.active]:bg-bg-primary-extra-light">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 20 20"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M7.99375 3.28338C8.06909 2.83132 8.46021 2.5 8.9185 2.5H11.0801C11.5384 2.5 11.9295 2.83132 12.0049 3.28338L12.1828 4.35092C12.2348 4.66262 12.4431 4.92226 12.7195 5.0753C12.7813 5.10952 12.8424 5.14486 12.9028 5.18131C13.1737 5.34487 13.5031 5.39572 13.7994 5.28471L14.8135 4.90481C15.2426 4.74404 15.7251 4.91709 15.9543 5.31398L17.0351 7.18601C17.2642 7.5829 17.1729 8.08728 16.819 8.37855L15.9821 9.06756C15.7383 9.26823 15.6175 9.5781 15.6233 9.89377C15.624 9.9291 15.6243 9.96451 15.6243 10C15.6243 10.0355 15.624 10.0709 15.6233 10.1062C15.6175 10.4219 15.7383 10.7318 15.9821 10.9324L16.819 11.6214C17.1729 11.9127 17.2642 12.4171 17.0351 12.814L15.9543 14.686C15.7251 15.0829 15.2426 15.256 14.8135 15.0952L13.7994 14.7153C13.5031 14.6043 13.1737 14.6551 12.9028 14.8187C12.8425 14.8551 12.7813 14.8905 12.7195 14.9247C12.4431 15.0777 12.2348 15.3374 12.1828 15.6491L12.0049 16.7166C11.9295 17.1687 11.5384 17.5 11.0801 17.5H8.9185C8.46021 17.5 8.06909 17.1687 7.99375 16.7166L7.81583 15.6491C7.76388 15.3374 7.55557 15.0777 7.27909 14.9247C7.21728 14.8905 7.15618 14.8551 7.09582 14.8187C6.82496 14.6551 6.49552 14.6043 6.19921 14.7153L5.18516 15.0952C4.756 15.256 4.27351 15.0829 4.04436 14.686L2.96354 12.814C2.7344 12.4171 2.82578 11.9127 3.1796 11.6215L4.01655 10.9324C4.26031 10.7318 4.38114 10.4219 4.3753 10.1062C4.37464 10.0709 4.37431 10.0355 4.37431 10C4.37431 9.96452 4.37464 9.92911 4.3753 9.89379C4.38114 9.57811 4.26031 9.26824 4.01655 9.06758L3.17959 8.37856C2.82578 8.08729 2.7344 7.58291 2.96354 7.18602L4.04436 5.31399C4.27351 4.9171 4.756 4.74405 5.18516 4.90483L6.1992 5.28472C6.49551 5.39573 6.82495 5.34487 7.09581 5.18132C7.15617 5.14487 7.21728 5.10952 7.27909 5.0753C7.55557 4.92226 7.76388 4.66262 7.81583 4.35092L7.99375 3.28338Z"
+													stroke="#6D687F"
+													stroke-width="1.5"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+													class="transition-colors group-hover:stroke-secondary-text group-[.active]:stroke-brand-primary" />
+												<path
+													d="M12.4991 9.99993C12.4991 11.3806 11.3798 12.4999 9.99912 12.4999C8.61841 12.4999 7.49912 11.3806 7.49912 9.99993C7.49912 8.61922 8.61841 7.49993 9.99912 7.49993C11.3798 7.49993 12.4991 8.61922 12.4991 9.99993Z"
+													stroke="#6D687F"
+													stroke-width="1.5"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+													class="transition-colors group-hover:stroke-secondary-text group-[.active]:stroke-brand-primary" />
+											</svg>
+
+											<span
+												class="font-medium text-secondary transition-colors group-[.active]:text-brand-primary">
+												Settings
+											</span>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<!-- STAR Divider -->
+					<hr class="border-b-border-light block my-md" />
+					<!-- END Divider -->
+					<!-- Nav Block -->
+					<div>
+						<p class="py-2xs text-sm font-medium text-soft">
+							Super Admin
+						</p>
+						<nav>
+							<ul class="space-y-2xs">
+								<li>
+									<a class="group" href="/organizations">
+										<div
+											class="flex items-center gap-xs rounded-md py-xs px-sm transition-colors group-[.active]:bg-bg-primary-extra-light">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 20 20"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M3.125 17.5H16.875M3.75 2.5H16.25M4.375 2.5V17.5M15.625 2.5V17.5M7.5 5.625H8.75M7.5 8.125H8.75M7.5 10.625H8.75M11.25 5.625H12.5M11.25 8.125H12.5M11.25 10.625H12.5M7.5 17.5V14.6875C7.5 14.1697 7.91973 13.75 8.4375 13.75H11.5625C12.0803 13.75 12.5 14.1697 12.5 14.6875V17.5"
+													stroke="#6D687F"
+													stroke-width="1.5"
+													stroke-linecap="round"
+													stroke-linejoin="round"
+													class="transition-colors group-hover:stroke-secondary-text group-[.active]:stroke-brand-primary" />
+											</svg>
+
+											<span
+												class="font-medium text-secondary transition-colors group-[.active]:text-brand-primary">
+												Organizations
+											</span>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</aside>
+		<!-- END Mobile Sidebar -->
+
+		<main class="mx-auto max-w-full p-md sm:p-lg">
+			<section>
+				<div>
+					<div class="flex gap-md">
+						<!-- Navigation -->
+						<div
+							class="hidden w-full max-w-[320px] shrink-0 pr-xl lg:grid">
+							<!-- Navs Blocks -->
+							<div class="flex flex-col">
+								<!-- Nav Block -->
+								<div>
+									<p
+										class="py-2xs text-sm font-medium text-soft">
+										Content Hub
+									</p>
+									<nav>
+										<ul class="space-y-2xs">
+											<li>
+												<a class="group" href="/">
+													<div
+														class="flex items-center gap-xs rounded-md py-xs px-sm transition-colors hover:bg-bg-neutral-lighter group-[.active]:bg-bg-primary-extra-light">
+														<svg
+															width="20"
+															height="20"
+															viewBox="0 0 20 20"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg">
+															<path
+																d="M1.875 10.0001L9.33709 2.53802C9.7032 2.1719 10.2968 2.1719 10.6629 2.53801L18.125 10.0001M3.75 8.1251V16.5626C3.75 17.0804 4.16973 17.5001 4.6875 17.5001H8.125V13.4376C8.125 12.9198 8.54473 12.5001 9.0625 12.5001H10.9375C11.4553 12.5001 11.875 12.9198 11.875 13.4376V17.5001H15.3125C15.8303 17.5001 16.25 17.0804 16.25 16.5626V8.1251M6.875 17.5001H13.75"
+																stroke="#6D687F"
+																stroke-width="1.5"
+																stroke-linecap="round"
+																class="transition-colors group-hover:stroke-secondary-text group-[.active]:stroke-brand-primary"
+																stroke-linejoin="round" />
+														</svg>
+
+														<span
+															class="font-medium text-secondary transition-colors group-[.active]:text-brand-primary">
+															Home
+														</span>
+													</div>
+												</a>
+											</li>
+											<li>
+												<a
+													class="group"
+													href="/resources">
+													<div
+														class="flex items-center gap-xs rounded-md py-xs px-sm transition-colors hover:bg-bg-neutral-lighter group-[.active]:bg-bg-primary-extra-light">
+														<svg
+															width="20"
+															height="20"
+															viewBox="0 0 20 20"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg">
+															<path
+																d="M16.25 11.875V9.6875C16.25 8.1342 14.9908 6.875 13.4375 6.875H12.1875C11.6697 6.875 11.25 6.45527 11.25 5.9375V4.6875C11.25 3.1342 9.9908 1.875 8.4375 1.875H6.875M8.75 1.875H4.6875C4.16973 1.875 3.75 2.29473 3.75 2.8125V17.1875C3.75 17.7053 4.16973 18.125 4.6875 18.125H15.3125C15.8303 18.125 16.25 17.7053 16.25 17.1875V9.375C16.25 5.23286 12.8921 1.875 8.75 1.875Z"
+																stroke="#6D687F"
+																class="transition-colors group-hover:stroke-secondary-text group-[.active]:stroke-brand-primary"
+																stroke-width="1.5"
+																stroke-linecap="round"
+																stroke-linejoin="round" />
+														</svg>
+
+														<span
+															class="font-medium text-secondary transition-colors group-[.active]:text-brand-primary">
+															Resources
+														</span>
+													</div>
+												</a>
+											</li>
+											<li>
+												<a class="group" href="/faq">
+													<div
+														class="flex items-center gap-xs rounded-md py-xs px-sm transition-colors hover:bg-bg-neutral-lighter group-[.active]:bg-bg-primary-extra-light">
+														<svg
+															width="20"
+															height="20"
+															viewBox="0 0 20 20"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg">
+															<path
+																d="M16.875 7.09253C17.6117 7.32957 18.125 8.03267 18.125 8.84018V12.4115C18.125 13.3587 17.4188 14.1619 16.4748 14.2389C16.1923 14.262 15.9091 14.2821 15.625 14.2994V16.875L13.125 14.375C11.9969 14.375 10.8797 14.329 9.77519 14.2388C9.5266 14.2186 9.2945 14.1479 9.08745 14.0375M16.875 7.09253C16.7488 7.05193 16.6161 7.025 16.4783 7.01356C15.3727 6.9218 14.2543 6.875 13.125 6.875C11.9957 6.875 10.8773 6.9218 9.77174 7.01356C8.82916 7.09179 8.125 7.89436 8.125 8.84018V12.4114C8.125 13.1092 8.50822 13.7288 9.08745 14.0375M16.875 7.09253V5.53109C16.875 4.17991 15.9152 3.00887 14.5753 2.83492C12.8732 2.61396 11.1375 2.5 9.37524 2.5C7.61278 2.5 5.87694 2.61399 4.1747 2.83499C2.83477 3.00895 1.875 4.17998 1.875 5.53115V10.7189C1.875 12.07 2.83478 13.2411 4.1747 13.415C4.65551 13.4774 5.13899 13.5313 5.625 13.5765V17.5L9.08745 14.0375"
+																stroke="#6D687F"
+																stroke-width="1.5"
+																stroke-linecap="round"
+																stroke-linejoin="round"
+																class="transition-colors group-hover:stroke-secondary-text group-[.active]:stroke-brand-primary" />
+														</svg>
+
+														<span
+															class="font-medium text-secondary transition-colors group-[.active]:text-brand-primary">
+															FAQ
+														</span>
+													</div>
+												</a>
+											</li>
+											<li>
+												<a
+													class="active group"
+													href="/bookmarks">
+													<div
+														class="flex items-center gap-xs rounded-md py-xs px-sm transition-colors hover:bg-bg-neutral-lighter group-[.active]:bg-bg-primary-extra-light">
+														<svg
+															width="20"
+															height="20"
+															viewBox="0 0 20 20"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg">
+															<path
+																d="M14.6611 2.76867C15.5783 2.87511 16.25 3.66583 16.25 4.58916V17.5L10 14.375L3.75 17.5V4.58916C3.75 3.66583 4.42173 2.87511 5.3389 2.76867C6.86797 2.59122 8.42333 2.5 10 2.5C11.5767 2.5 13.132 2.59122 14.6611 2.76867Z"
+																stroke="#6D687F"
+																stroke-width="1.5"
+																stroke-linecap="round"
+																stroke-linejoin="round"
+																class="transition-colors group-hover:stroke-secondary-text group-[.active]:stroke-brand-primary" />
+														</svg>
+
+														<span
+															class="font-medium text-secondary transition-colors group-[.active]:text-brand-primary">
+															Bookmarks
+														</span>
+													</div>
+												</a>
+											</li>
+											<li>
+												<a class="group" href="/ideas">
+													<div
+														class="flex items-center gap-xs rounded-md py-xs px-sm transition-colors hover:bg-bg-neutral-lighter group-[.active]:bg-bg-primary-extra-light">
+														<svg
+															width="20"
+															height="20"
+															viewBox="0 0 20 20"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg">
+															<path
+																d="M10 15V10.625M10 10.625C10.4316 10.625 10.8505 10.5704 11.25 10.4675M10 10.625C9.56838 10.625 9.14953 10.5704 8.75 10.4675M11.875 16.6995C11.2677 16.8147 10.6409 16.875 10 16.875C9.35913 16.875 8.73235 16.8147 8.125 16.6995M11.25 18.685C10.8392 18.728 10.4222 18.75 10 18.75C9.57783 18.75 9.1608 18.728 8.75 18.685M11.875 15V14.8403C11.875 14.0212 12.4236 13.3209 13.132 12.9098C14.9963 11.8281 16.25 9.81048 16.25 7.5C16.25 4.04822 13.4518 1.25 10 1.25C6.54822 1.25 3.75 4.04822 3.75 7.5C3.75 9.81048 5.00371 11.8281 6.86796 12.9098C7.57644 13.3209 8.125 14.0212 8.125 14.8403V15"
+																stroke="#6D687F"
+																stroke-width="1.5"
+																stroke-linecap="round"
+																stroke-linejoin="round"
+																class="transition-colors group-hover:stroke-secondary-text group-[.active]:stroke-brand-primary" />
+														</svg>
+
+														<span
+															class="font-medium text-secondary transition-colors group-[.active]:text-brand-primary">
+															Ideas
+														</span>
+													</div>
+												</a>
+											</li>
+										</ul>
+									</nav>
+								</div>
+								<!-- STAR Divider -->
+								<hr class="border-b-border-light block my-md" />
+								<!-- END Divider -->
+								<!-- Nav Block -->
+								<div>
+									<p
+										class="py-2xs text-sm font-medium text-soft">
+										Organization
+									</p>
+									<nav>
+										<ul class="space-y-2xs">
+											<li>
+												<a class="group" href="/people">
+													<div
+														class="flex items-center gap-xs rounded-md py-xs px-sm transition-colors hover:bg-bg-neutral-lighter group-[.active]:bg-bg-primary-extra-light">
+														<svg
+															width="20"
+															height="20"
+															viewBox="0 0 20 20"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg">
+															<path
+																d="M12.5 15.9396C13.1941 16.1417 13.9281 16.25 14.6875 16.25C15.9198 16.25 17.0854 15.9647 18.122 15.4565C18.124 15.4088 18.125 15.3607 18.125 15.3125C18.125 13.414 16.5859 11.875 14.6875 11.875C13.5058 11.875 12.4633 12.4713 11.8446 13.3793M12.5 15.9396V15.9375C12.5 15.0101 12.2624 14.1382 11.8446 13.3793M12.5 15.9396C12.5 15.9693 12.4997 15.999 12.4992 16.0286C10.9478 16.9627 9.1304 17.5 7.1875 17.5C5.2446 17.5 3.4272 16.9627 1.87577 16.0286C1.87526 15.9983 1.875 15.9679 1.875 15.9375C1.875 13.0035 4.25349 10.625 7.1875 10.625C9.1941 10.625 10.9409 11.7375 11.8446 13.3793M10 5.3125C10 6.8658 8.7408 8.125 7.1875 8.125C5.6342 8.125 4.375 6.8658 4.375 5.3125C4.375 3.7592 5.6342 2.5 7.1875 2.5C8.7408 2.5 10 3.7592 10 5.3125ZM16.875 7.1875C16.875 8.39562 15.8956 9.375 14.6875 9.375C13.4794 9.375 12.5 8.39562 12.5 7.1875C12.5 5.97938 13.4794 5 14.6875 5C15.8956 5 16.875 5.97938 16.875 7.1875Z"
+																stroke="#6D687F"
+																stroke-width="1.5"
+																stroke-linecap="round"
+																stroke-linejoin="round"
+																class="transition-colors group-hover:stroke-secondary-text group-[.active]:stroke-brand-primary" />
+														</svg>
+
+														<span
+															class="font-medium text-secondary transition-colors group-[.active]:text-brand-primary">
+															People
+														</span>
+													</div>
+												</a>
+											</li>
+											<li>
+												<a
+													class="group"
+													href="/suppliers">
+													<div
+														class="flex items-center gap-xs rounded-md py-xs px-sm transition-colors hover:bg-bg-neutral-lighter group-[.active]:bg-bg-primary-extra-light">
+														<svg
+															width="20"
+															height="20"
+															viewBox="0 0 20 20"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg">
+															<path
+																d="M6.875 15.625C6.875 16.3154 6.31536 16.875 5.625 16.875C4.93464 16.875 4.375 16.3154 4.375 15.625M6.875 15.625C6.875 14.9346 6.31536 14.375 5.625 14.375C4.93464 14.375 4.375 14.9346 4.375 15.625M6.875 15.625H11.875M4.375 15.625H2.8125C2.29473 15.625 1.875 15.2053 1.875 14.6875V11.8754M16.25 15.625C16.25 16.3154 15.6904 16.875 15 16.875C14.3096 16.875 13.75 16.3154 13.75 15.625M16.25 15.625C16.25 14.9346 15.6904 14.375 15 14.375C14.3096 14.375 13.75 14.9346 13.75 15.625M16.25 15.625L17.1875 15.625C17.7053 15.625 18.1281 15.2048 18.0962 14.688C17.9212 11.8483 16.9561 9.2224 15.418 7.02736C15.1162 6.5966 14.6274 6.33978 14.1022 6.31096H11.875M13.75 15.625H11.875M11.875 6.31096V5.51232C11.875 5.03942 11.5229 4.63934 11.0525 4.59052C9.67945 4.44803 8.28576 4.375 6.875 4.375C5.46424 4.375 4.07055 4.44803 2.69748 4.59052C2.2271 4.63934 1.875 5.03942 1.875 5.51232V11.8754M11.875 6.31096V11.8754M11.875 15.625V11.8754M11.875 11.8754H1.875"
+																stroke="#6D687F"
+																stroke-width="1.5"
+																stroke-linecap="round"
+																stroke-linejoin="round"
+																class="transition-colors group-hover:stroke-secondary-text group-[.active]:stroke-brand-primary" />
+														</svg>
+
+														<span
+															class="font-medium text-secondary transition-colors group-[.active]:text-brand-primary">
+															Suppliers
+														</span>
+													</div>
+												</a>
+											</li>
+
+											<li>
+												<a
+													class="group"
+													href="/organization_settings">
+													<div
+														class="flex items-center gap-xs rounded-md py-xs px-sm transition-colors hover:bg-bg-neutral-lighter group-[.active]:bg-bg-primary-extra-light">
+														<svg
+															width="20"
+															height="20"
+															viewBox="0 0 20 20"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg">
+															<path
+																d="M7.99375 3.28338C8.06909 2.83132 8.46021 2.5 8.9185 2.5H11.0801C11.5384 2.5 11.9295 2.83132 12.0049 3.28338L12.1828 4.35092C12.2348 4.66262 12.4431 4.92226 12.7195 5.0753C12.7813 5.10952 12.8424 5.14486 12.9028 5.18131C13.1737 5.34487 13.5031 5.39572 13.7994 5.28471L14.8135 4.90481C15.2426 4.74404 15.7251 4.91709 15.9543 5.31398L17.0351 7.18601C17.2642 7.5829 17.1729 8.08728 16.819 8.37855L15.9821 9.06756C15.7383 9.26823 15.6175 9.5781 15.6233 9.89377C15.624 9.9291 15.6243 9.96451 15.6243 10C15.6243 10.0355 15.624 10.0709 15.6233 10.1062C15.6175 10.4219 15.7383 10.7318 15.9821 10.9324L16.819 11.6214C17.1729 11.9127 17.2642 12.4171 17.0351 12.814L15.9543 14.686C15.7251 15.0829 15.2426 15.256 14.8135 15.0952L13.7994 14.7153C13.5031 14.6043 13.1737 14.6551 12.9028 14.8187C12.8425 14.8551 12.7813 14.8905 12.7195 14.9247C12.4431 15.0777 12.2348 15.3374 12.1828 15.6491L12.0049 16.7166C11.9295 17.1687 11.5384 17.5 11.0801 17.5H8.9185C8.46021 17.5 8.06909 17.1687 7.99375 16.7166L7.81583 15.6491C7.76388 15.3374 7.55557 15.0777 7.27909 14.9247C7.21728 14.8905 7.15618 14.8551 7.09582 14.8187C6.82496 14.6551 6.49552 14.6043 6.19921 14.7153L5.18516 15.0952C4.756 15.256 4.27351 15.0829 4.04436 14.686L2.96354 12.814C2.7344 12.4171 2.82578 11.9127 3.1796 11.6215L4.01655 10.9324C4.26031 10.7318 4.38114 10.4219 4.3753 10.1062C4.37464 10.0709 4.37431 10.0355 4.37431 10C4.37431 9.96452 4.37464 9.92911 4.3753 9.89379C4.38114 9.57811 4.26031 9.26824 4.01655 9.06758L3.17959 8.37856C2.82578 8.08729 2.7344 7.58291 2.96354 7.18602L4.04436 5.31399C4.27351 4.9171 4.756 4.74405 5.18516 4.90483L6.1992 5.28472C6.49551 5.39573 6.82495 5.34487 7.09581 5.18132C7.15617 5.14487 7.21728 5.10952 7.27909 5.0753C7.55557 4.92226 7.76388 4.66262 7.81583 4.35092L7.99375 3.28338Z"
+																stroke="#6D687F"
+																stroke-width="1.5"
+																stroke-linecap="round"
+																stroke-linejoin="round"
+																class="transition-colors group-hover:stroke-secondary-text group-[.active]:stroke-brand-primary" />
+															<path
+																d="M12.4991 9.99993C12.4991 11.3806 11.3798 12.4999 9.99912 12.4999C8.61841 12.4999 7.49912 11.3806 7.49912 9.99993C7.49912 8.61922 8.61841 7.49993 9.99912 7.49993C11.3798 7.49993 12.4991 8.61922 12.4991 9.99993Z"
+																stroke="#6D687F"
+																stroke-width="1.5"
+																stroke-linecap="round"
+																stroke-linejoin="round"
+																class="transition-colors group-hover:stroke-secondary-text group-[.active]:stroke-brand-primary" />
+														</svg>
+
+														<span
+															class="font-medium text-secondary transition-colors group-[.active]:text-brand-primary">
+															Settings
+														</span>
+													</div>
+												</a>
+											</li>
+										</ul>
+									</nav>
+								</div>
+								<!-- STAR Divider -->
+								<hr class="border-b-border-light block my-md" />
+								<!-- END Divider -->
+								<!-- Nav Block -->
+								<div>
+									<p
+										class="py-2xs text-sm font-medium text-soft">
+										Super Admin
+									</p>
+									<nav>
+										<ul class="space-y-2xs">
+											<li>
+												<a
+													class="group"
+													href="/organizations">
+													<div
+														class="flex items-center gap-xs rounded-md py-xs px-sm transition-colors hover:bg-bg-neutral-lighter group-[.active]:bg-bg-primary-extra-light">
+														<svg
+															width="20"
+															height="20"
+															viewBox="0 0 20 20"
+															fill="none"
+															xmlns="http://www.w3.org/2000/svg">
+															<path
+																d="M3.125 17.5H16.875M3.75 2.5H16.25M4.375 2.5V17.5M15.625 2.5V17.5M7.5 5.625H8.75M7.5 8.125H8.75M7.5 10.625H8.75M11.25 5.625H12.5M11.25 8.125H12.5M11.25 10.625H12.5M7.5 17.5V14.6875C7.5 14.1697 7.91973 13.75 8.4375 13.75H11.5625C12.0803 13.75 12.5 14.1697 12.5 14.6875V17.5"
+																stroke="#6D687F"
+																stroke-width="1.5"
+																stroke-linecap="round"
+																stroke-linejoin="round"
+																class="transition-colors group-hover:stroke-secondary-text group-[.active]:stroke-brand-primary" />
+														</svg>
+
+														<span
+															class="font-medium text-secondary transition-colors group-[.active]:text-brand-primary">
+															Organizations
+														</span>
+													</div>
+												</a>
+											</li>
+										</ul>
+									</nav>
+								</div>
+							</div>
+						</div>
+						<!-- END Navigation -->
+						<!-- Content -->
+						<div
+							class="col-span-12 flex w-full flex-col justify-start gap-xl md:col-span-9">
+							<!-- START Breadcrumbs -->
+
+							<div>
+								<ul
+									class="hidden items-center flex-wrap -mb-xl lg:flex">
+									<li
+										class="p-2xs hover:bg-bg-neutral-lighter rounded-md">
+										<a
+											class="group font-medium text-sm text-soft"
+											href="/">
+											<svg
+												width="28"
+												height="28"
+												viewBox="0 0 28 28"
+												fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path
+													fill-rule="evenodd"
+													clip-rule="evenodd"
+													d="M13.2929 6.29289C13.6834 5.90237 14.3166 5.90237 14.7071 6.29289L21.7071 13.2929C21.9931 13.5789 22.0787 14.009 21.9239 14.3827C21.7691 14.7564 21.4045 15 21 15H20V21C20 21.5523 19.5523 22 19 22H17C16.4477 22 16 21.5523 16 21V18C16 17.4477 15.5523 17 15 17H13C12.4477 17 12 17.4477 12 18V21C12 21.5523 11.5523 22 11 22H9.00003C8.44774 22 8.00003 21.5523 8.00003 21V15H7.00003C6.59557 15 6.23093 14.7564 6.07615 14.3827C5.92137 14.009 6.00692 13.5789 6.29292 13.2929L13.2929 6.29289Z"
+													fill="#6D687F"
+													class="group-hover:fill-secondary" />
+											</svg>
+										</a>
+									</li>
+
+									<li class="p-2xs">
+										<img
+											src="../assets/images/icons/breadcrumbs-arrow.svg"
+											alt="img" />
+									</li>
+
+									<li class="p-2xs rounded-md">
+										<p
+											class="font-medium text-sm text-soft cursor-default">
+											People
+										</p>
+									</li>
+								</ul>
+
+								<ul
+									class="flex items-center flex-wrap -mb-xl lg:hidden">
+									<li class="p-2xs">
+										<img
+											class="rotate-180"
+											src="../assets/images/icons/breadcrumbs-arrow.svg"
+											alt="img" />
+									</li>
+
+									<li
+										class="p-2xs hover:bg-bg-neutral-lighter rounded-md">
+										<a
+											href="/"
+											class="font-medium text-sm text-soft cursor-default"
+											>Back</a
+										>
+									</li>
+								</ul>
+							</div>
+
+							<!-- END Breadcrumbs -->
+							<!-- Content Header -->
+							<div
+								class="flex-start flex flex-col justify-between gap-md py-xs md:flex-row md:items-end md:gap-4xl lg:gap-6xl">
+								<div class="flex max-w-[656px] flex-col gap-xs">
+									<h1>People</h1>
+									<p class="font-medium text-soft">
+										Lorem ipsum, dolor sit amet consectetur
+										adipisicing elit.
+									</p>
+								</div>
+								<!-- Btn Primary Small With Icons -->
+								<a
+									href="/invite_person_step1"
+									class="flex shrink-0 items-center justify-center gap-2xs rounded-md border border-brand-primary bg-brand-primary py-xs px-sm text-sm font-bold text-white transition-colors hover:bg-brand-primary-dark">
+									<img
+										class="w-5"
+										src="./assets/images/icons/plus-icon.svg"
+										alt="icon" />
+									<span>Add user</span>
+								</a>
+							</div>
+							<!-- END Content Header -->
+							<!-- START Content -->
+							<div class="relative overflow-hidden">
+								<div
+									class="w-full overflow-auto before:absolute before:left-0 before:top-0 before:h-full before:w-sm before:rotate-180 before:bg-table-gradient-left after:absolute after:right-0 after:top-0 after:h-full after:w-sm after:bg-table-gradient xl:before:hidden xl:after:hidden">
+									<table class="w-full table-auto">
+										<thead>
+											<tr
+												class="border-b border-border-light">
+												<td
+													class="px-sm py-xs font-bold">
+													Name
+												</td>
+												<td
+													class="px-sm py-xs font-bold w-[184px]">
+													Email
+												</td>
+												<td
+													class="px-sm py-xs font-bold w-[184px]">
+													Job Title
+												</td>
+												<td
+													class="px-sm py-xs font-bold w-[184px]">
+													Role
+												</td>
+											</tr>
+										</thead>
+										<tbody>
+											<tr
+												class="border-b border-b-border-light">
+												<td
+													class="px-sm py-md font-medium text-secondary">
+													<a
+														href="/person_detail"
+														class="group flex items-center gap-md">
+														<button
+															class="h-10 w-10 shrink-0 overflow-hidden rounded-full border border-border-light">
+															<img
+																class="pointer-events-none object-cover"
+																src="./assets/images/global/avatar.jpg"
+																srcset="
+																	./assets/images/global/avatar@2x.jpg 2x,
+																	./assets/images/global/avatar@3x.jpg 3x
+																"
+																alt="avatar" />
+														</button>
+
+														<p
+															class="group-hover:underline text-secondary group-hover:text-brand-primary underline-offset-4">
+															Jozef Ševčík
+														</p>
+													</a>
+												</td>
+												<td
+													class="w-[184px] px-sm py-md font-medium">
+													<p
+														class="font-medium text-secondary">
+														sevcik@codescale.net
+													</p>
+												</td>
+												<td
+													class="w-[184px] px-sm py-md font-medium text-secondary">
+													Project Manager
+												</td>
+												<td
+													class="w-[184px] px-sm py-md font-medium text-secondary">
+													Staff
+												</td>
+											</tr>
+
+											<tr
+												class="border-b border-b-border-light">
+												<td
+													class="px-sm py-md font-medium text-secondary">
+													<a
+														href="/person_detail"
+														class="group flex items-center gap-md">
+														<button
+															class="h-10 w-10 shrink-0 overflow-hidden rounded-full border border-border-light bg-neutral font-bold">
+															<span>JŠ</span>
+														</button>
+
+														<p
+															class="group-hover:underline text-secondary group-hover:text-brand-primary underline-offset-4">
+															Jozef Ševčík
+														</p>
+													</a>
+												</td>
+												<td
+													class="w-[184px] px-sm py-md font-medium">
+													<p
+														class="font-medium text-secondary">
+														sevcik@codescale.net
+													</p>
+												</td>
+												<td
+													class="w-[184px] px-sm py-md font-medium text-secondary">
+													Project Manager
+												</td>
+												<td
+													class="w-[184px] px-sm py-md font-medium text-secondary">
+													Staff
+												</td>
+											</tr>
+
+											<tr
+												class="border-b border-b-border-light">
+												<td
+													class="px-sm py-md font-medium text-secondary">
+													<a
+														href="/person_detail"
+														class="group flex items-center gap-md">
+														<button
+															class="h-10 w-10 shrink-0 overflow-hidden rounded-full border border-border-light">
+															<img
+																class="pointer-events-none object-cover"
+																src="./assets/images/global/avatar.jpg"
+																srcset="
+																	./assets/images/global/avatar@2x.jpg 2x,
+																	./assets/images/global/avatar@3x.jpg 3x
+																"
+																alt="avatar" />
+														</button>
+
+														<p
+															class="group-hover:underline text-secondary group-hover:text-brand-primary underline-offset-4">
+															Jozef Ševčík
+														</p>
+													</a>
+												</td>
+												<td
+													class="w-[184px] px-sm py-md font-medium">
+													<p
+														class="font-medium text-secondary">
+														sevcik@codescale.net
+													</p>
+												</td>
+												<td
+													class="w-[184px] px-sm py-md font-medium text-secondary">
+													Project Manager
+												</td>
+												<td
+													class="w-[184px] px-sm py-md font-medium text-secondary">
+													Staff
+												</td>
+											</tr>
+
+											<tr
+												class="border-b border-b-border-light">
+												<td
+													class="px-sm py-md font-medium text-secondary">
+													<a
+														href="/person_detail"
+														class="group flex items-center gap-md">
+														<button
+															class="h-10 w-10 shrink-0 overflow-hidden rounded-full border border-border-light bg-neutral font-bold">
+															<span>JŠ</span>
+														</button>
+
+														<p
+															class="group-hover:underline text-secondary group-hover:text-brand-primary underline-offset-4">
+															Jozef Ševčík
+														</p>
+													</a>
+												</td>
+												<td
+													class="w-[184px] px-sm py-md font-medium">
+													<p
+														class="font-medium text-secondary">
+														sevcik@codescale.net
+													</p>
+												</td>
+												<td
+													class="w-[184px] px-sm py-md font-medium text-secondary">
+													Project Manager
+												</td>
+												<td
+													class="w-[184px] px-sm py-md font-medium text-secondary">
+													Staff
+												</td>
+											</tr>
+
+											<tr
+												class="border-b border-b-border-light">
+												<td
+													class="px-sm py-md font-medium text-secondary">
+													<a
+														href="/person_detail"
+														class="group flex items-center gap-md">
+														<button
+															class="h-10 w-10 shrink-0 overflow-hidden rounded-full border border-border-light">
+															<img
+																class="pointer-events-none object-cover"
+																src="./assets/images/global/avatar.jpg"
+																srcset="
+																	./assets/images/global/avatar@2x.jpg 2x,
+																	./assets/images/global/avatar@3x.jpg 3x
+																"
+																alt="avatar" />
+														</button>
+
+														<p
+															class="group-hover:underline text-secondary group-hover:text-brand-primary underline-offset-4">
+															Jozef Ševčík
+														</p>
+													</a>
+												</td>
+												<td
+													class="w-[184px] px-sm py-md font-medium">
+													<p
+														class="font-medium text-secondary">
+														sevcik@codescale.net
+													</p>
+												</td>
+												<td
+													class="w-[184px] px-sm py-md font-medium text-secondary">
+													Project Manager
+												</td>
+												<td
+													class="w-[184px] px-sm py-md font-medium text-secondary">
+													Staff
+												</td>
+											</tr>
+
+											<tr
+												class="border-b border-b-border-light">
+												<td
+													class="px-sm py-md font-medium text-secondary">
+													<a
+														href="/person_detail"
+														class="group flex items-center gap-md">
+														<button
+															class="h-10 w-10 shrink-0 overflow-hidden rounded-full border border-border-light bg-neutral font-bold">
+															<span>JŠ</span>
+														</button>
+
+														<p
+															class="group-hover:underline text-secondary group-hover:text-brand-primary underline-offset-4">
+															Jozef Ševčík
+														</p>
+													</a>
+												</td>
+												<td
+													class="w-[184px] px-sm py-md font-medium">
+													<p
+														class="font-medium text-secondary">
+														sevcik@codescale.net
+													</p>
+												</td>
+												<td
+													class="w-[184px] px-sm py-md font-medium text-secondary">
+													Project Manager
+												</td>
+												<td
+													class="w-[184px] px-sm py-md font-medium text-secondary">
+													Staff
+												</td>
+											</tr>
+
+											<tr
+												class="border-b border-b-border-light">
+												<td
+													class="px-sm py-md font-medium text-secondary">
+													<a
+														href="/person_detail"
+														class="group flex items-center gap-md">
+														<button
+															class="h-10 w-10 shrink-0 overflow-hidden rounded-full border border-border-light">
+															<img
+																class="pointer-events-none object-cover"
+																src="./assets/images/global/avatar.jpg"
+																srcset="
+																	./assets/images/global/avatar@2x.jpg 2x,
+																	./assets/images/global/avatar@3x.jpg 3x
+																"
+																alt="avatar" />
+														</button>
+
+														<p
+															class="group-hover:underline text-secondary group-hover:text-brand-primary underline-offset-4">
+															Jozef Ševčík
+														</p>
+													</a>
+												</td>
+												<td
+													class="w-[184px] px-sm py-md font-medium">
+													<p
+														class="font-medium text-secondary">
+														sevcik@codescale.net
+													</p>
+												</td>
+												<td
+													class="w-[184px] px-sm py-md font-medium text-secondary">
+													Project Manager
+												</td>
+												<td
+													class="w-[184px] px-sm py-md font-medium text-secondary">
+													Staff
+												</td>
+											</tr>
+
+											<tr
+												class="border-b border-b-border-light">
+												<td
+													class="px-sm py-md font-medium text-secondary">
+													<a
+														href="/person_detail"
+														class="group flex items-center gap-md">
+														<button
+															class="h-10 w-10 shrink-0 overflow-hidden rounded-full border border-border-light bg-neutral font-bold">
+															<span>JŠ</span>
+														</button>
+
+														<p
+															class="group-hover:underline text-secondary group-hover:text-brand-primary underline-offset-4">
+															Jozef Ševčík
+														</p>
+													</a>
+												</td>
+												<td
+													class="w-[184px] px-sm py-md font-medium">
+													<p
+														class="font-medium text-secondary">
+														sevcik@codescale.net
+													</p>
+												</td>
+												<td
+													class="w-[184px] px-sm py-md font-medium text-secondary">
+													Project Manager
+												</td>
+												<td
+													class="w-[184px] px-sm py-md font-medium text-secondary">
+													Staff
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<!-- END Content  -->
+						</div>
+						<!-- END Content -->
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<!-- Start Switch modal -->
+		<div
+			id="switch-modal"
+			class="fixed inset-0 hidden animate-fadeIn items-center justify-center bg-soft/25 p-md">
+			<div
+				class="flex w-full max-w-[432px] flex-col items-center gap-md rounded-lg bg-white p-lg">
+				<div
+					class="flex h-2xl w-2xl items-center justify-center rounded-full bg-brand-primary">
+					<img
+						class="h-6 w-6"
+						src="../assets/images/icons/switch-icon-white.svg"
+						alt="search icon" />
+				</div>
+
+				<h6 class="text-center">
+					Ready to switch to XXX organization?
+				</h6>
+				<p class="text-center font-medium text-soft">
+					Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+					Eius aliquam laudantium explicabo pariatur iste dolorem
+					animi vitae error totam. At sapiente aliquam accusamus
+					facere veritatis.
+				</p>
+
+				<div class="flex gap-xs">
+					<!-- Btn Secondary Small -->
+					<button
+						id="switch-modal-close-btn"
+						class="flex items-center justify-center gap-2xs rounded-md bg-white p-xs text-sm font-bold text-secondary outline outline-border-medium transition-colors hover:bg-neutral-light">
+						<span>Cancel</span>
+					</button>
+					<!-- Btn Primary Small -->
+					<button
+						class="flex items-center justify-center gap-2xs rounded-md bg-brand-primary p-xs text-sm font-bold text-white transition-colors hover:bg-brand-primary-dark">
+						<span>Yes, switch</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
